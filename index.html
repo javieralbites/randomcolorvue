@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div  class="content" :style="{ background: randomColor }">
+
+            <div class="box">
+                
+                <p>{{nameColor}}</p>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    nameColor: '',
+                    colors: [
+                        'blue', 'red', 'green', 'pink', 'orange', 'black', 'brown', 'yellow','peru','beige', 'yellow', 'violet', 'tomato', 'teal','wheat', 'silver', 'purple', 'olive', 'navy', 'lime', 'indigo', 'gold', 'cyan', 'coral','aqua', 'blueviolet', 'magenta', 'palegreen'
+                    ]
+                }
+            },
+           created(){
+               console.log('obligame perro');
+               const newColor = Math.floor(Math.random() * this.colors.length)
+               this.randomColor = this.colors[newColor]
+               this.nameColor = this.colors[newColor]
+           }
+           
+           
+
+
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>
